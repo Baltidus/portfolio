@@ -1,0 +1,57 @@
+body {
+    background-color: #404B3B;
+    height: 100%;
+    width: 100%;
+}
+
+
+#test {
+    background-color: fuchsia;
+}
+
+#grid {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#main_logo_container {
+    margin-top: 13em;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    padding: 15px;
+    
+}
+
+.tree_box {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    height : 15em;
+}
+
+.tree_one {
+    position: absolute;
+    left: -5px;
+    width: auto;
+    height: auto;
+    top: -10px;
+}
+
+.tree_two {
+    transform: scaleX(-1);
+}
+
+#main_logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    border-style: solid;
+    border-color: #f0f;
+    padding-top: -10px;
+}
