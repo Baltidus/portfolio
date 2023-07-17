@@ -1,64 +1,73 @@
-* {
-    box-sizing: border-box;
-}
 body {
     background-color: #404B3B;
     font-family: 'M PLUS Code Latin', sans-serif;
-    margin: 15px 0;
-    height: 100%;
+    /* single unscrollable page */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .main{
+    /* content keeps on screen */
+    width: 100vw;
+    height: 100vh;
+    /* set the grid on mobile view */
+    display: grid;
+    grid-template-areas: 
+        "top-tree"
+        "main"
+        "bottom-tree";
+    /* only one column for mobile */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+}
+
+.image {
+    width: 105%;
+    height: auto;
+    object-fit: cover;
+}
+
+.main_thumb_container {
+    bottom: 10vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    position: absolute;
+    justify-content: space-evenly;
     
 }
-
-.tree_thumb_container{
-    position: relative;
-    overflow: hidden;
-}
-.thumb_tree{
-    position: relative;
-    width: 95%;
+.main_logo {
+    width: 70%;
+    justify-self: flex-start;
+    box-shadow: 0 0 8px 8px #404B3B inset;
 }
 
-.top_tree_branch{
+/* position of the branches */
+.tree_thumb {
+    position: relative;
+    align-self: stretch;
+}
+
+.top_tree_thumb{
     transform: scaleX(-1) scaleY(-1) rotate(23deg) ;
     float: right;
-    right: -30px;
+    right: -10vw;
+    /* top: -5vh; */
 }
-.bottom_tree_branch{
+.bottom_tree_thumb{
     transform: rotate(23deg);
-    float: left;
-    
-    left: -30px;
+    float: left; 
+    left: -10vw;
+    top: -5vh;
 }
 
-#main_logo_container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-#main_logo{
-    align-self: center;
-    width: 70%;
-    height: auto;
-}
-
+/* button style */
 .button_welcome{
     width: 50%;
     box-sizing: border-box;
     border : 0.40em solid white;
     padding: 15px 30px 18px; 
-    margin: 2em 30px 0; 
+    margin: 1vh 30px 0; 
     font-size: 100%;
     font-weight: bold;
     color: white;
@@ -76,15 +85,3 @@ body {
     border-color: #f8e3ba; 
 }
 
-
-@media only screen and (min-width: 768px) {
-    body {
-        height: 100%;
-    }
-    .main{
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: stretch;        
-    }
-
-}
