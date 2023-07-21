@@ -1,87 +1,86 @@
+/* settings for the page, Font, background and overflow */
 body {
-    background-color: #404B3B;
     font-family: 'M PLUS Code Latin', sans-serif;
-    /* single unscrollable page */
+    background-color: #404B3B;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow:hidden;
 }
 
-.main{
-    /* content keeps on screen */
-    width: 100vw;
-    height: 100vh;
-    /* set the grid on mobile view */
+/* setting up the grid for Mobile device, 3 rows, 1 column and content centered */
+.wrapper {
     display: grid;
-    grid-template-areas: 
-        "top-tree"
-        "main"
-        "bottom-tree";
-    /* only one column for mobile */
+    grid-template-rows: repeat(3, 33.33vh);
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 33%);
+    justify-content: center;
+    grid-template-areas: 
+    "top"
+    "main" 
+    "bottom";
 }
 
-.image {
-    width: 105%;
-    height: auto;
-    object-fit: cover;
-}
-
-.main_thumb_container {
-    bottom: 10vh;
+/* fit best for the responsive usages */
+.wrapper > * {
     display: flex;
+}
+
+/* contain the top tree, in a cool position */
+.top_container{
+    grid-area: top;
+    transform: scale(1.2) scaleX(-1) scaleY(-1) rotate(23deg) ;
+}
+
+/* contain the button to access the menu and the main logo */
+.main_container{
+    grid-area: main;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    
-}
-.main_logo {
-    width: 70%;
-    justify-self: flex-start;
-    box-shadow: 0 0 8px 8px #404B3B inset;
+    align-items: center;
 }
 
-/* position of the branches */
-.tree_thumb {
-    position: relative;
-    align-self: stretch;
+/* change position of the bottom tree to be out of the screen */
+.bottom_container{
+    grid-area: bottom;
+    transform: rotate(23deg) scale(1.2);
 }
 
-.top_tree_thumb{
-    transform: scaleX(-1) scaleY(-1) rotate(23deg) ;
-    float: right;
-    right: -10vw;
-    /* top: -5vh; */
-}
-.bottom_tree_thumb{
-    transform: rotate(23deg);
-    float: left; 
-    left: -10vw;
-    top: -5vh;
+/* setting for the best scale between the button and the logo on the grid row */
+.main_logo{
+   height: 66%; 
 }
 
-/* button style */
+/* needed to keep the scale on all mobile device */
+.image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* needed to fit properly under the logo */
 .button_welcome{
+    height: 15%;
+}
+
+/* styles for the button on uses */
+.button_welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
-    box-sizing: border-box;
-    border : 0.40em solid white;
-    padding: 15px 30px 18px; 
-    margin: 1vh 30px 0; 
-    font-size: 100%;
+    border : 4px solid white;
+    font-size: 1.1rem;
     font-weight: bold;
     color: white;
     text-align: center;
     text-decoration: none;
-    z-index: 35;
 }
 
-.button_welcome:link, .button_welcome:visited{
+.button_welcome> a:link, .button_welcome > a:visited{
     color: white;
 }
-
+.button_welcome > a {
+    text-decoration: none;
+}
 .button_welcome:hover {
     color: #f8e3ba; 
     border-color: #f8e3ba; 
 }
-

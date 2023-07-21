@@ -1,0 +1,131 @@
+body {
+    background-color: #404B3B;
+    font-family: 'M PLUS Code Latin', sans-serif;
+    /* single unscrollable page */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.main{
+    /* content keeps on screen */
+    width: 100vw;
+    height: 100vh;
+    /* set the grid on mobile view */
+    display: grid;
+    grid-template-areas: 
+        "top-tree"
+        "main"
+        "bottom-tree";
+    /* only one column for mobile */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+}
+
+
+.top_container{
+    grid-area: top-tree;
+}
+.main_container{
+    grid-area: main;
+}
+.bottom_container{
+    grid-area: bottom-tree;
+}
+
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.main_thumb_container {
+    bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.main_logo {
+    width: 70%;
+    justify-self: flex-start;
+    box-shadow: 0 0 8px 8px #404B3B inset;
+}
+
+/* position of the branches */
+.tree_thumb {
+    position: relative;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.top_tree_thumb{
+    transform: scaleX(-1) scaleY(-1) rotate(23deg) ;
+    float: right;
+    right: -8vw;
+}
+.bottom_tree_thumb{
+    transform: rotate(23deg);
+    float: left; 
+    left: -8vw;
+    top: -2vh;
+}
+
+/* button style */
+.button_welcome{
+    width: 50%;
+    box-sizing: border-box;
+    border : 5px solid white;
+    padding: 15px 30px 18px; 
+    margin: 1vh 30px 0; 
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    z-index: 35;
+}
+
+.button_welcome:link, .button_welcome:visited{
+    color: white;
+}
+
+.button_welcome:hover {
+    color: #f8e3ba; 
+    border-color: #f8e3ba; 
+}
+
+@media screen and (min-width: 768px) {
+    .main{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-areas: 
+        "tree-left empty tree-right"
+        "fill-left logo fill-right"
+;
+    } 
+
+    .top_container{
+        grid-area: tree-left;
+        grid-column-start: 3;
+        background-color: blue;
+    }
+    .main_thumb_container{
+        grid-area: logo;
+        grid-column-start: 2;
+        background-color: green;
+    }
+    .bottom_container{
+        grid-area: tree-right;
+        background-color: pink;
+    }
+    .image{
+        width : 30px;
+        height: auto;
+    }
+    
+}
