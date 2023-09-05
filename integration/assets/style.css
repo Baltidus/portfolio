@@ -246,7 +246,7 @@ body {
     flex-direction: column;
 }
 /* everything related to the menu bar and logo */ 
-.home_topMenu_box {
+/* .home_topMenu_box {
     height: var(--nav-height);
     background: var(--bg-color);
     display: flex;
@@ -260,26 +260,26 @@ body {
     max-width: 70px; 
     margin: 10px 0px;
 
-}
+} */
 
 /* related to the contents display */
-.home_content_box {
+/* .home_content_box {
     width: 100%;
 
 }
 .home_article_box {
     height: 100px;
-}
+} */
 
 /* related to the footer */
-.home_footer_box {
+/* .home_footer_box {
     justify-self: flex-end;
 }
 .emailContact_box {
     background-color: lightgoldenrodyellow;
     color: rgb(255, 255, 255);
     display: none;
-}
+} */
     
 
 
@@ -287,12 +287,12 @@ body {
 
 
 /* TODO - There is a lot to manage here, letting me not repeat value everywhere */
-:root {
-    /* related to the main style of the page */
+ /* :root { 
+    related to the main style of the page
     --bg-color: #404B3B; 
     --font-title-color: #B6C396;
     --font-color: rgb(255, 255, 255);
     --nav-height: 100px;
     --color-test: rgb(111, 111, 212);
     --color-test2: rgb(233, 180, 240);
-}
+} */
